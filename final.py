@@ -11,15 +11,17 @@ def check_if_type(data):
 
 
 def check_if_answers(data):
-    return '(*)(1)(2)(3)(4)' in data
+    return '(*)' in data or '(1)' in data or '(2)' in data or '(3)' in data or '(4)' in data
 
 
-pdfFileObj = open('Arihant-general_knowledge.pdf', 'rb')
+pdfFileObj = open('pdf_reader/Arihant-general_knowledge.pdf', 'rb')
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 
 result = {}
 
 for page in range(pdfReader.numPages):
+    if page == 65:
+        print("hello")
     details_on_this_page = {
         'questions': [],
         'answers': []
@@ -78,10 +80,10 @@ for page in range(pdfReader.numPages):
             except Exception as e:
                 i += 1
 
-    print("Question found on this page: ", end=' ')
-    print(details_on_this_page['questions'])
-    print("Answers found on this page: ", end=' ')
-    print(details_on_this_page['answers'])
+    print(f"Question found on page no {page+1}: ", end=' ')
+    print(*details_on_this_page['questions'])
+    print(f"Answers found on page no {page+1}: ", end=' ')
+    print(*details_on_this_page['answers'])
     # x = input("Do you want to move to next page: (y/n)")
     # if x == "n":
     #     print(result)
