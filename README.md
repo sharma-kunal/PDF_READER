@@ -74,4 +74,11 @@ The platforms being searched are:
 
 For more projects and my experince, please have a look on my portfolio and resume.
 
+---
+**NOTE**
+
+There are some issues left with the project to resolve. It was my mistake, that I didn't keep a check on my EMail and
+got the message late. So, please do consider my submission. If by any chance, there is a scope for extending the
+deadline, I'll definately would love to resolve all the issues in my code.
+
 Thank You
